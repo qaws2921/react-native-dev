@@ -14,14 +14,17 @@ import {
   ImageBackground,
   Image,
   View,
-  Text
+  Text,
+  Alert
 } from 'react-native';
+import {Colors} from 'react-native-paper'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import * as D from './src/data'
 
 const avatarUrl = D.randomAvatarUrl()
 const avatarSize = 50
-
 const text = 'Almost before we knew iy, we had left the ground'
+const onIconPressed = () => Alert.alert('icon pressed')
 
 export default function App() {
   return (
@@ -37,6 +40,8 @@ export default function App() {
           <Text style={[styles.text, styles.semiBold]}>{text} [semiBold]</Text>
           <Text style={[styles.text, styles.bold]}>{text} [bold]</Text>
         </View>
+        <Icon name="home" size={50} color={Colors.lightBlue500}
+          onPress={onIconPressed} />
       </ImageBackground>
     </SafeAreaView>
   )
